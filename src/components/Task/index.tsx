@@ -2,13 +2,13 @@ import React, { useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import Icon from 'react-native-vector-icons/Ionicons'
 import { deleteTask, nextStateTask, prevStateTask } from '~/service'
-import { COLORS } from '~/utils/constants/colors'
 import { STATES } from '~/utils/constants/states'
 import { TEXTS } from '~/utils/constants/texts'
 import { nextState } from '~/utils/functions'
 import { ITask } from '~/utils/interfaces/task'
 import InfoModal from '../InfoModal'
 import { styles } from './styles'
+import DeleteModal from '../DeleteModal'
 
 interface Props {
   task: ITask
@@ -21,9 +21,10 @@ interface Props {
 const Task = ({ task, colors, stateChange }: Props) => {
   const { color, background } = colors
   const [infoModal, setInfoModal] = useState(false)
+  const [deleteModal, setDeleteModal] = useState(false)
 
-  const handleDelete = () => {
-    deleteTask(task.id)
+  const handleDelete = (taskId: number) => {
+    deleteTask(taskId)
     stateChange()
   }
   const handleNextState = () => {
@@ -38,6 +39,13 @@ const Task = ({ task, colors, stateChange }: Props) => {
 
   return (
     <View>
+      <DeleteModal
+        taskId={task.id}
+        taskName={task.name}
+        enabled={deleteModal}
+        deleteTask={handleDelete} 
+        onBackdropPress={() => setDeleteModal(false)}
+      />
       <InfoModal
         task={task}
         enabled={infoModal}
@@ -56,7 +64,7 @@ const Task = ({ task, colors, stateChange }: Props) => {
           <Text style={styles(color, background).textEstimated}>{TEXTS.TASK_ESTIMATED}: {task.estimate}hs</Text>
         </View>
         <View style={styles(color, background).controlsContainer}>
-          <TouchableOpacity onPress={handleDelete}>
+          <TouchableOpacity onPress={() => setDeleteModal(true)}>
             <Icon name='trash-outline' size={25} color={color} />
           </TouchableOpacity>
           <View style={styles(color, background).statesContainers}>

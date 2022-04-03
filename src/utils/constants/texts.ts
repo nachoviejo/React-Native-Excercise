@@ -14,5 +14,9 @@ export const TEXTS = {
   PREV_TASK_GO_BACK: 'Go back',
   NEXT_TASK_IN_PROGRESS: 'Start',
   NEXT_TASK_COMPLETED: 'Finish',
-  INFO_MODAL_STATES_TIMES: 'State times'
+  INFO_MODAL_STATES_TIMES: 'State times',
+  DELETE_MODAL_TEXT_PART_1: 'Do you want to delete "',
+  DELETE_MODAL_TEXT_PART_2: '" task?',
+  DELETE_MODAL_SUBTITLTE: 'This action is no reversible',
+  DELETE_MODAL_DELETE: 'Delete'
 }
