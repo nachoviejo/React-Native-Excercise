@@ -3,6 +3,7 @@ export const COLORS = {
   ligthGreyBackground: '#DDDDDD',
   black: '#000000',
   white: '#FFFFFF',
+  greyBorder: '#9A9A9A',
   planned: {
     color: '#0182A7',
     background: '#C2F1FF',
@@ -14,5 +15,13 @@ export const COLORS = {
   completed: {
     color: '#339100',
     background: '#D7FFC2'
+  },
+  ok: {
+    color: '#339100',
+    background: '#D7FFC2'
+  },
+  cancel: {
+    color: '#B30000',
+    background: '#FFB7B7'
   }
 }

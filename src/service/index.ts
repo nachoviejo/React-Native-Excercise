@@ -94,7 +94,7 @@ export const prevStateTask = async (id: number, state: number) => {
   }
 }
 
-export const addTask = async ( { name, description, estimate }: ITask) => {
+export const addTask = async ( name: string, description: string, estimate: number ) => {
   try {
     await axios.post(tasksUrl(), {
       name,

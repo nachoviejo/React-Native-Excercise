@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { deleteTask, nextStateTask, prevStateTask } from '~/service'
 import { STATES } from '~/utils/constants/states'
+import { TEXTS } from '~/utils/constants/texts'
 import { ITask } from '~/utils/interfaces/task'
 import InfoModal from '../InfoModal'
 import { styles } from './styles'
@@ -45,7 +46,7 @@ const Task = ({ task, colors, stateChange }: Props) => {
         </View>
         <Text style={styles(color, background).textDescription}>{task.description}</Text>
         <View style={styles(color, background).estimatedContainer}>
-          <Text style={styles(color, background).textEstimated}>Estimated: {task.estimate}hs</Text>
+          <Text style={styles(color, background).textEstimated}>{TEXTS.TASK_ESTIMATED}: {task.estimate}hs</Text>
         </View>
         <View style={styles(color, background).controlsContainer}>
           <TouchableOpacity onPress={handleDelete}>

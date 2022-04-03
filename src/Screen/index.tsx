@@ -2,11 +2,13 @@ import { AxiosResponse } from 'axios'
 import React, { useEffect, useState } from 'react'
 import { SectionList } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import Header from '~/components/Header'
 import SectionHeader from '~/components/SectionHeader'
 import Task from '~/components/Task'
 import { getTasks } from '~/service'
 import { COLORS } from '~/utils/constants/colors'
 import { SECTIONS } from '~/utils/constants/sections'
+import { TEXTS } from '~/utils/constants/texts'
 import { ITask } from '~/utils/interfaces/task'
 import { styles } from './styles'
 
@@ -46,21 +48,22 @@ const Screen = () => {
 
 return (
   <SafeAreaView>
+    <Header />
     <SectionList 
       renderItem={renderTask}
       sections={[
         {
-          title: 'Planned', 
+          title: TEXTS.SCREEN_PLANNED,
           data: plannedTasks,
           colors: COLORS.planned
         }, 
         {
-          title: 'In Progress',
+          title: TEXTS.SCREEN_IN_PROGRESS,
           data: inProgressTasks,
           colors: COLORS.inProgress
         }, 
         {
-          title: 'Completed',
+          title: TEXTS.SCREEN_COMPLETED,
           data: completedTasks,
           colors: COLORS.completed
         }
