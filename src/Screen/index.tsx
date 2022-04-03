@@ -48,7 +48,7 @@ const Screen = () => {
 
 return (
   <SafeAreaView>
-    <Header />
+    <Header refresh={getData}/>
     <SectionList 
       renderItem={renderTask}
       sections={[

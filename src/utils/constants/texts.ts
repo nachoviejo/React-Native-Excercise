@@ -1,4 +1,5 @@
 export const TEXTS = {
+  HEADER_TITLE: 'Task Manager',
   HEADER_ADD_TASK: 'Add task',
   SCREEN_PLANNED: 'Planned',
   SCREEN_IN_PROGRESS: 'In Progress',
@@ -9,5 +10,9 @@ export const TEXTS = {
   NEW_TASK_ESTIMATE: 'Estimate',
   NEW_TASK_TITLE: 'Create a new task',
   NEW_TASK_CREATE: 'Create',
-  NEW_TASK_CANCEL: 'Cancel'
+  NEW_TASK_CANCEL: 'Cancel',
+  PREV_TASK_GO_BACK: 'Go back',
+  NEXT_TASK_IN_PROGRESS: 'Start',
+  NEXT_TASK_COMPLETED: 'Finish',
+  INFO_MODAL_STATES_TIMES: 'State times'
 }

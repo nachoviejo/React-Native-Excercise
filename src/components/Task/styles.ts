@@ -10,7 +10,7 @@ export const styles = (color: string, background: string) =>
     container: {
       paddingVertical: verticalScale(5),
       paddingHorizontal: scale(10),
-      borderColor: COLORS.black,
+      borderColor: color,
       borderWidth: 1,
       borderRadius: 10,
       shadowColor: COLORS.darkGrey,
@@ -49,11 +49,23 @@ export const styles = (color: string, background: string) =>
     controlsContainer: {
       marginTop: verticalScale(10),
       flexDirection: 'row',
-      justifyContent: 'space-between'
+      justifyContent: 'space-between',
+      alignItems: 'center'
     },
     statesContainers: {
       flexDirection: 'row',
       justifyContent: 'space-between'
+    },
+    goBackIconContainer: {
+      alignItems: 'center',
+      marginRight: scale(5)
+    },
+    finishIconContainer:{
+      alignItems: 'center',
+      marginLeft: scale(5)
+    },
+    iconText: {
+      color: color
     }
   })
 

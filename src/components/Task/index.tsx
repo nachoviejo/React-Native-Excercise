@@ -1,8 +1,11 @@
 import React, { useState } from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
+import Icon from 'react-native-vector-icons/Ionicons'
 import { deleteTask, nextStateTask, prevStateTask } from '~/service'
+import { COLORS } from '~/utils/constants/colors'
 import { STATES } from '~/utils/constants/states'
 import { TEXTS } from '~/utils/constants/texts'
+import { nextState } from '~/utils/functions'
 import { ITask } from '~/utils/interfaces/task'
 import InfoModal from '../InfoModal'
 import { styles } from './styles'
@@ -33,15 +36,19 @@ const Task = ({ task, colors, stateChange }: Props) => {
     stateChange()
   }
 
-
   return (
     <View>
-      <InfoModal task={task} enabled={infoModal} onBackdropPress={() => setInfoModal(false)} />
+      <InfoModal
+        task={task}
+        enabled={infoModal}
+        onBackdropPress={() => setInfoModal(false)}
+        colors={colors}
+      />
       <View style={styles(color, background).container}>
         <View style={styles(color, background).titleContainer}>
           <Text style={styles(color, background).textTitle}>{task.name}</Text>
           <TouchableOpacity onPress={() => setInfoModal(true)}>
-            <Text>Info</Text>
+            <Icon name='information-circle-outline' size={25} color={color} />
           </TouchableOpacity>
         </View>
         <Text style={styles(color, background).textDescription}>{task.description}</Text>
@@ -50,17 +57,19 @@ const Task = ({ task, colors, stateChange }: Props) => {
         </View>
         <View style={styles(color, background).controlsContainer}>
           <TouchableOpacity onPress={handleDelete}>
-            <Text>Delete</Text>
+            <Icon name='trash-outline' size={25} color={color} />
           </TouchableOpacity>
           <View style={styles(color, background).statesContainers}>
             {task.state > STATES.PLANNED && (
-              <TouchableOpacity onPress={handlePrevState}>
-                <Text>Prev State</Text>
+              <TouchableOpacity style={styles(color, background).goBackIconContainer} onPress={handlePrevState}>
+                <Icon name='arrow-undo-outline' size={25} color={color} />
+                <Text style={styles(color, background).iconText}>{TEXTS.PREV_TASK_GO_BACK}</Text>
               </TouchableOpacity>
             )}
             {task.state < STATES.COMPLETED && (
-              <TouchableOpacity onPress={handleNextState}>
-                <Text>Next State</Text>
+              <TouchableOpacity style={styles(color, background).finishIconContainer} onPress={handleNextState}>
+                <Icon name={nextState(task.state).icon} size={25} color={color} />
+                <Text style={styles(color, background).iconText}>{nextState(task.state).text}</Text>
               </TouchableOpacity>
             )}
           </View>

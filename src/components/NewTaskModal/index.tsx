@@ -16,14 +16,21 @@ const NewTaskModal = ({ enabled, onBackdropPress, onCreateTask }: Props) => {
   const [description, setDescription] = useState('')
   const [estimate, setEstimate] = useState(0)
 
-  const handleOnCreateTask = () => {
+  const handleOnCreateTask = () => {    
     if (!!name && !!description && !!estimate) {
       onCreateTask(name, description, estimate)
     }
   }
 
+  const handleCancel = () => {
+    setName('')
+    setDescription('')
+    setEstimate(0)
+    onBackdropPress()
+  }
+
   return (
-    <Modal isVisible={enabled} onBackdropPress={onBackdropPress}>
+    <Modal isVisible={enabled} onBackdropPress={handleCancel}>
       <View style={styles.container}>
         <Text style={styles.titleText}>{TEXTS.NEW_TASK_TITLE}</Text>
           <TextInput 
@@ -41,10 +48,15 @@ const NewTaskModal = ({ enabled, onBackdropPress, onCreateTask }: Props) => {
           />
           <View style={styles.numericInput}>
             <Text>{TEXTS.NEW_TASK_ESTIMATE}</Text>
-            <NumericInput type='plus-minus' onChange={value => setEstimate(value)} />
+            <NumericInput 
+              type='plus-minus'
+              value={estimate}
+              onChange={value => setEstimate(value)}
+              minValue={0}
+            />
           </View>
         <View style={styles.buttonsContainer}>
-          <TouchableOpacity style={styles.cancelButton} onPress={onBackdropPress}>
+          <TouchableOpacity style={styles.cancelButton} onPress={handleCancel}>
             <Text style={styles.cancelText}>{TEXTS.NEW_TASK_CANCEL}</Text>
           </TouchableOpacity>
           <TouchableOpacity style={styles.createButton} onPress={handleOnCreateTask}>
