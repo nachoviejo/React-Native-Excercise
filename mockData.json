@@ -1,0 +1,64 @@
+{
+  "tasks": [
+    {
+      "id": 1,
+      "name": "Buy food",
+      "description": "Go to market and buy food",
+      "estimate": 2,
+      "state": 0,
+      "creationTimeStamp": "2022-04-02T10:10",
+      "inProgressTimeStamp": null,
+      "completedTimeStamp": null
+    },
+    {
+      "id": 2,
+      "name": "Homework",
+      "description": "Finish your homework",
+      "estimate": 1,
+      "state": 0,
+      "creationTimeStamp": "2022-04-01T14:36",
+      "inProgressTimeStamp": null,
+      "completedTimeStamp": null
+    },
+    {
+      "id": 3,
+      "name": "Build a new react native app",
+      "description": "Start an app from scratch and finish it",
+      "estimate": 104,
+      "state": 1,
+      "creationTimeStamp": "2022-04-01T14:17",
+      "inProgressTimeStamp": "2022-04-01T18:01",
+      "completedTimeStamp": null
+    },
+    {
+      "id": 4,
+      "name": "Read new book",
+      "description": "Go to the shop, buy a book and read it",
+      "estimate": 92,
+      "state": 1,
+      "creationTimeStamp": "2022-03-30T10:21",
+      "inProgressTimeStamp": "2022-03-30T14:33",
+      "completedTimeStamp": null
+    },
+    {
+      "id": 5,
+      "name": "Call Juan",
+      "description": "Ask him for the newsletter",
+      "estimate": 0.5,
+      "state": 2,
+      "creationTimeStamp": "2022-04-02T15:27",
+      "inProgressTimeStamp": "2022-04-02T15:30",
+      "completedTimeStamp": "2022-04-02T16:02"
+    },
+    {
+      "id": 6,
+      "name": "Argentina's match",
+      "description": "Watch Argentina's match",
+      "estimate": 2,
+      "state": 2,
+      "creationTimeStamp": "2022-03-29T10:59",
+      "inProgressTimeStamp": "2022-03-29T21:00",
+      "completedTimeStamp": "2022-03-29T23:01"
+    }
+  ]
+}

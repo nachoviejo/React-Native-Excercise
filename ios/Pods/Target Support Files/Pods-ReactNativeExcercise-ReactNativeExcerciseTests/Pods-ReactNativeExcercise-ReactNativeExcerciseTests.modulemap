@@ -1,0 +1,6 @@
+module Pods_ReactNativeExcercise_ReactNativeExcerciseTests {
+  umbrella header "Pods-ReactNativeExcercise-ReactNativeExcerciseTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
