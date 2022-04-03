@@ -20,5 +20,10 @@ export const styles = (color: string) =>
       fontSize: fontSizes.LARGE,
       fontWeight: '200',
       color: color
+    },
+    emptyText: {
+      alignItems: 'center',
+      marginTop: verticalScale(5),
+      marginBottom: verticalScale(10)
     }
   })

@@ -1,7 +1,8 @@
 import { AxiosResponse } from 'axios'
 import React, { useEffect, useState } from 'react'
-import { SectionList } from 'react-native'
+import { SectionList, Text } from 'react-native'
 import { SafeAreaView } from 'react-native-safe-area-context'
+import EmptyComponent from '~/components/EmptyComponent'
 import Header from '~/components/Header'
 import SectionHeader from '~/components/SectionHeader'
 import Task from '~/components/Task'
@@ -69,7 +70,7 @@ return (
         }
       ]}
       renderSectionHeader={({section}) => (
-        <SectionHeader sectionName={section.title} colors={section.colors} />
+        <SectionHeader sectionName={section.title} dataLength={section.data.length} colors={section.colors} />
       )}
       style={styles.sectionList}
       onRefresh={getData}
