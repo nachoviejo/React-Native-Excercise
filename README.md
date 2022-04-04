@@ -19,5 +19,7 @@ Use react
 ## How to run
 
 Install dependencies with YARN using 'yarn' command.
+
 Start json-server using 'yarn server'.
+
 Run for ios using 'yarn ios' or run for Android using 'yarn android'.
