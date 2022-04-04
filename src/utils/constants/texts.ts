@@ -1,5 +1,5 @@
 export const TEXTS = {
-  HEADER_TITLE: 'Task Manager',
+  HEADER_TITLE: 'Task Tracker',
   HEADER_ADD_TASK: 'Add task',
   SCREEN_PLANNED: 'Planned',
   SCREEN_IN_PROGRESS: 'In Progress',
