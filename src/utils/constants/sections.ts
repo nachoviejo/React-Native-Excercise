@@ -1,1 +1,0 @@
-export const SECTIONS = ['Planned', 'In Progress', 'Completed']
